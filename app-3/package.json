@@ -1,5 +1,5 @@
 {
-  "name": "portal",
+  "name": "app-3",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,16 +7,16 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",
     "react": "^17.0.1",
+    "react-app-rewire-aliases": "^0.2.0",
+    "react-app-rewired": "^2.1.8",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
-    "single-spa": "^5.9.1",
     "single-spa-react": "^4.1.0",
-    "systemjs": "^6.8.3",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

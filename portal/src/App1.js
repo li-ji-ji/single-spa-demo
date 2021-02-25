@@ -1,9 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React from "react";
 
 function App() {
-  console.log("app-1");
   return (
     <div className="App">
       <header className="App-header">
@@ -17,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          App-1
+          app-1
         </a>
       </header>
     </div>
