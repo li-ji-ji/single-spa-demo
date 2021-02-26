@@ -40,12 +40,25 @@ singleSpa.registerApplication(
 singleSpa.registerApplication(
     'react',
     async () => {
-        await runScript('http://localhost:3001/app3.js');
-        await runScript('http://localhost:3001/static/js/main.chunk.js');
+        await runScript('http://localhost:5000/static/js/bundle.js');
+        await runScript('http://localhost:5000/static/js/main.chunk.js');
+        
         return window.singleReact
     },
     (location) => location.pathname.startsWith('/react')
 );
+singleSpa.registerApplication(
+    'test',
+    async () => {
+        await runScript('http://localhost:3000/static/js/bundle.js');
+        await runScript('http://localhost:3000/static/js/main.chunk.js');
+        
+        return window.singleReact
+    },
+    (location) => location.pathname.startsWith('/test')
+);
+
+
 
 
 singleSpa.start(); // 启动
