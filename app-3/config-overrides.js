@@ -6,6 +6,5 @@ module.exports = function override(config, env) {
   config.entry = "./src/index.js";
   config.output.libraryTarget = "system";
   config.output.filename = "app3.js";
-
   return config;
 };

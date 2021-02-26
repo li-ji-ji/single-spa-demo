@@ -1,4 +1,5 @@
-import * as singleSpa from "single-spa";
+import * as singleSpa from 'single-spa';
+
 
 /**
  * runScript 一个promise同步方法。可以代替创建一个script标签，然后加载服务
@@ -6,15 +7,15 @@ import * as singleSpa from "single-spa";
  */
 
 const runScript = async (url) => {
-  // 加载css同理
-  return new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = url;
-    script.onload = resolve;
-    script.onerror = reject;
-    const firstScript = document.getElementsByTagName("script")[0];
-    firstScript.parentNode.insertBefore(script, firstScript);
-  });
+    // 加载css同理
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = url;
+        script.onload = resolve;
+        script.onerror = reject;
+        const firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
 };
 
 // 注册微前端服务
@@ -25,24 +26,26 @@ const runScript = async (url) => {
     () => import('xxx/main.js')
 */
 singleSpa.registerApplication(
-  "vue",
-  async () => {
-    await runScript("http://localhost:5000/static/js/bundle.js");
-    await runScript("http://localhost:5000/static/js/main.chunk.js");
-    return window.singleVue;
-  },
-  // 配置微前端模块前缀
-  // 纯函数根据参数查看是否处于活动状态
-  (location) => location.pathname.startsWith("/vue")
+    'vue',
+    async () => {
+        await runScript('http://localhost:5000/static/js/bundle.js');
+        await runScript('http://localhost:5000/static/js/main.chunk.js');
+        return window.singleVue;
+    },
+    // 配置微前端模块前缀
+    // 纯函数根据参数查看是否处于活动状态
+    (location) => location.pathname.startsWith('/vue')
 );
+
 singleSpa.registerApplication(
-  "react",
-  async () => {
-    await runScript("http://localhost:3001/app3.js");
-    await runScript("http://localhost:3001/static/js/vendors~main.chunk.js");
-    await runScript("http://localhost:3001/static/js/main.chunk.js");
-  },
-  (location) => location.pathname.startsWith("/react")
+    'react',
+    async () => {
+        await runScript('http://localhost:3001/app3.js');
+        await runScript('http://localhost:3001/static/js/main.chunk.js');
+        return window.singleReact
+    },
+    (location) => location.pathname.startsWith('/react')
 );
+
 
 singleSpa.start(); // 启动
