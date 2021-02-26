@@ -1,5 +1,5 @@
 {
-  "name": "@hzby/app-4",
+  "name": "@hzby/app-6",
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",

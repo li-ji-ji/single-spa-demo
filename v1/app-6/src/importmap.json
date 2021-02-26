@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "@react-mf/root-config": "//localhost:9000/react-mf-root-config.js",
+    "react": "https://unpkg.com/react@17/umd/react.production.min.js",
+    "react-dom": "https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+  }
+}
