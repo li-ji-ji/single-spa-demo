@@ -1,0 +1,42 @@
+.App {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color: rgb(10,23,46);
+}
+/* 滚动条美化 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: transparent;
+    -webkit-box-shadow: transparent;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgb(35,44,57);
+    -webkit-box-shadow: inset 0 0 10px rgb(35,44,57);
+}
+/* 去除记住密码颜色 */
+input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-text-fill-color: #ededed !important;
+    -webkit-box-shadow: 0 0 0px 1000px transparent  inset !important;
+    background-color:transparent;
+    background-image: none;
+    transition: background-color 50000s ease-in-out 0s;
+}
+input {
+    background-color:transparent;
+    font-size: 1.4rem;
+}
+
+/* 去除请求加载圈 */
+#nprogress .spinner{
+    display: none !important;
+}
